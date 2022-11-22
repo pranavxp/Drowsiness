@@ -1,3 +1,4 @@
+#This is a simple program i stitched together to detect if a person is drowsy or not
 from scipy.spatial import distance as dist
 from imutils.video import VideoStream
 from imutils import face_utils
@@ -78,8 +79,8 @@ saying = False
 COUNTER = 0
 
 print("-> Loading the predictor and detector...")
-#detector = dlib.get_frontal_face_detector()
-detector = cv2.CascadeClassifier("haarcascade_frontalface.xml")    #Faster but less accurate
+detector = dlib.get_frontal_face_detector()
+detector = cv2.CascadeClassifier("haarcascade_frontalface.xml")    
 predictor = dlib.shape_predictor('shape_predictor_face_landmarks.dat')
 
 
@@ -93,12 +94,10 @@ while True:
     frame = imutils.resize(frame, width=450)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    #rects = detector(gray, 0)
     rects = detector.detectMultiScale(gray, scaleFactor=1.1, 
 		minNeighbors=5, minSize=(30, 30),
 		flags=cv2.CASCADE_SCALE_IMAGE)
 
-    #for rect in rects:
     for (x, y, w, h) in rects:
         rect = dlib.rectangle(int(x), int(y), int(x + w),int(y + h))
         
@@ -126,7 +125,7 @@ while True:
             if COUNTER >= EYE_AR_CONSEC_FRAMES:
                 if alarm_status == False:
                     alarm_status = True
-                    t = Thread(target=alarm, args=('Wake up',))
+                    t = Thread(target=alarm, args=('WAKE UP WAKE UP',))
                     t.deamon = True
                     t.start()
 
@@ -138,11 +137,11 @@ while True:
             alarm_status = False
 
         if (distance > YAWN_THRESH):
-                cv2.putText(frame, "Yawn Alert", (10, 30),
+                cv2.putText(frame, "YAWN ALERT", (10, 30),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 if alarm_status2 == False and saying == False:
                     alarm_status2 = True
-                    t = Thread(target=alarm, args=('Take some fresh air sir',))
+                    t = Thread(target=alarm, args=('ALERT ALERT',))
                     t.deamon = True
                     t.start()
         else:
@@ -154,10 +153,10 @@ while True:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
 
-    cv2.imshow("Frame", frame)
+    cv2.imshow("Drowsiness Detector - PRNXV", frame)
     key = cv2.waitKey(1) & 0xFF
 
-    if key == ord("q"):
+    if key == ord("x"):
         break
 
 cv2.destroyAllWindows()
