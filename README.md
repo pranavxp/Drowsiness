@@ -1,2 +1,3 @@
-Hello this is a drowsiness detetion program which uses pytorch mainly.
-Use services like espeak for converting text to speech
+# By Pranav P 
+# Use a speech sythesizer like espeak from source forge to get alerts(text to speech)
+# HOPE YOU ENJOY THANK YOU
