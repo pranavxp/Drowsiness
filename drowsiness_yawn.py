@@ -78,13 +78,13 @@ alarm_status2 = False
 saying = False
 COUNTER = 0
 
-print("-> Loading the predictor and detector...")
+print("Loading the predictor and detector...")
 detector = dlib.get_frontal_face_detector()
 detector = cv2.CascadeClassifier("haarcascade_frontalface.xml")    
 predictor = dlib.shape_predictor('shape_predictor_face_landmarks.dat')
 
 
-print("-> Starting Video Stream")
+print("Starting Video Stream...")
 vs = VideoStream(src=args["webcam"]).start()
 time.sleep(1.0)
 
@@ -125,7 +125,7 @@ while True:
             if COUNTER >= EYE_AR_CONSEC_FRAMES:
                 if alarm_status == False:
                     alarm_status = True
-                    t = Thread(target=alarm, args=('WAKE UP WAKE UP',))
+                    t = Thread(target=alarm, args=('WAKE UP !',))
                     t.deamon = True
                     t.start()
 
@@ -141,7 +141,7 @@ while True:
                             cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 if alarm_status2 == False and saying == False:
                     alarm_status2 = True
-                    t = Thread(target=alarm, args=('ALERT ALERT',))
+                    t = Thread(target=alarm, args=('ALERT !',))
                     t.deamon = True
                     t.start()
         else:
