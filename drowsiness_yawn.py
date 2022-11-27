@@ -66,7 +66,7 @@ def lip_distance(shape):
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-w", "--webcam", type=int, default=0,
+ap.add_argument("-s", "--source", type=int, default=0,
                 help="index of webcam on system")
 args = vars(ap.parse_args())
 
