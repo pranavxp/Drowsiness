@@ -158,6 +158,6 @@ while True:
 
     if key == ord("x"):
         break
-
+    
 cv2.destroyAllWindows()
 vs.stop()
