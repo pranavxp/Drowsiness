@@ -70,7 +70,7 @@ ap.add_argument("-s", "--source", type=int, default=0,
                 help="index of webcam on system")
 args = vars(ap.parse_args())
 
-EYE_AR_THRESH = 0.27
+EYE_AR_THRESH = 0.29
 EYE_AR_CONSEC_FRAMES = 25
 YAWN_THRESH = 20
 alarm_status = False
@@ -90,7 +90,7 @@ time.sleep(1.0)
 while True:
 
     frame = vs.read()
-    frame = imutils.resize(frame, width=450)
+    frame = imutils.resize(frame, width=600)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     rects = detector.detectMultiScale(gray, scaleFactor=1.1, 
@@ -146,9 +146,9 @@ while True:
         else:
             alarm_status2 = False
 
-        cv2.putText(frame, "EAR: {:.2f}".format(ear), (300, 30),
+        cv2.putText(frame, "EAR: {:.2f}".format(ear), (430, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-        cv2.putText(frame, "YAWN: {:.2f}".format(distance), (300, 60),
+        cv2.putText(frame, "YAWN: {:.2f}".format(distance), (430, 60),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
 
