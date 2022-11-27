@@ -85,7 +85,7 @@ predictor = dlib.shape_predictor('shape_predictor_face_landmarks.dat')
 
 
 print("Starting Video Stream...")
-vs = VideoStream(src=args["webcam"]).start()
+vs = VideoStream(src=args["source"]).start()
 time.sleep(1.0)
 
 while True:
