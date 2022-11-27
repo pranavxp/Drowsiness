@@ -70,8 +70,8 @@ ap.add_argument("-s", "--source", type=int, default=0,
                 help="index of webcam on system")
 args = vars(ap.parse_args())
 
-EYE_AR_THRESH = 0.4
-EYE_AR_CONSEC_FRAMES = 30
+EYE_AR_THRESH = 0.3
+EYE_AR_CONSEC_FRAMES = 20
 YAWN_THRESH = 20
 alarm_status = False
 alarm_status2 = False
