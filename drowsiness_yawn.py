@@ -70,7 +70,7 @@ ap.add_argument("-s", "--source", type=int, default=0,
                 help="index of webcam on system")
 args = vars(ap.parse_args())
 
-EYE_AR_THRESH = 0.3
+EYE_AR_THRESH = 0.28
 EYE_AR_CONSEC_FRAMES = 20
 YAWN_THRESH = 20
 alarm_status = False
@@ -79,7 +79,6 @@ saying = False
 COUNTER = 0
 
 print("Loading the predictor and detector...")
-detector = dlib.get_frontal_face_detector()
 detector = cv2.CascadeClassifier("haarcascade_frontalface.xml")    
 predictor = dlib.shape_predictor('shape_predictor_face_landmarks.dat')
 
