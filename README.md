@@ -9,7 +9,7 @@ Python3 drowsiness_yawn.py -- source 0
 by delfault the program uses source 0 so it is not necessary to specify the source if you have only one webcam.
 Use a speech sythesizer like espeak from source forge to get alerts(text to speech).
 
-# resources 
+# Resources 
 https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html
 https://pyimagesearch.com/
 https://pyimagesearch.com/2017/10/23/raspberry-pi-facial-landmarks-drowsiness-detection-with-opencv-and-dlib/
