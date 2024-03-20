@@ -15,7 +15,7 @@ https://pyimagesearch.com/
 https://pyimagesearch.com/2017/10/23/raspberry-pi-facial-landmarks-drowsiness-detection-with-opencv-and-dlib/
 
 # HOPE YOU ENJOY THANK YOU
-by Pranav P
+# by Pranav P
 
 # Note
 This code may not work withtout some tinkering ;)
