@@ -13,9 +13,5 @@ Use a speech sythesizer like espeak from source forge to get alerts(text to spee
 https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html
 https://pyimagesearch.com/
 https://pyimagesearch.com/2017/10/23/raspberry-pi-facial-landmarks-drowsiness-detection-with-opencv-and-dlib/
-
-# HOPE YOU ENJOY THANK YOU
+
 # by Pranav P
-
-# Note
-This code may not work withtout some tinkering ;)
